@@ -18,6 +18,44 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\bonds.cpp" />
+    <ClCompile Include="..\..\src\driver.cpp" />
+    <ClCompile Include="..\..\src\duktape.cpp" />
+    <ClCompile Include="..\..\src\feaElements.cpp" />
+    <ClCompile Include="..\..\src\integrator.cpp" />
+    <ClCompile Include="..\..\src\interactions.cpp" />
+    <ClCompile Include="..\..\src\interface.cpp" />
+    <ClCompile Include="..\..\src\md3dsystem.cpp" />
+    <ClCompile Include="..\..\src\nn.cpp" />
+    <ClCompile Include="..\..\src\particles.cpp" />
+    <ClCompile Include="..\..\src\properties.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\bonds.h" />
+    <ClInclude Include="..\..\src\CudaUtil.h" />
+    <ClInclude Include="..\..\src\def.h" />
+    <ClInclude Include="..\..\src\duktape.h" />
+    <ClInclude Include="..\..\src\duk_config.h" />
+    <ClInclude Include="..\..\src\feaElements.h" />
+    <ClInclude Include="..\..\src\integrator.h" />
+    <ClInclude Include="..\..\src\interactions.h" />
+    <ClInclude Include="..\..\src\interface.h" />
+    <ClInclude Include="..\..\src\md3dsystem.h" />
+    <ClInclude Include="..\..\src\nn.h" />
+    <ClInclude Include="..\..\src\particles.h" />
+    <ClInclude Include="..\..\src\properties.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\src\CudaUtil.cu" />
+    <CudaCompile Include="..\..\src\integratorCuda.cu" />
+    <CudaCompile Include="..\..\src\interactionsCuda.cu" />
+    <CudaCompile Include="..\..\src\nnCuda.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\Makefile" />
+    <None Include="..\..\src\test.js" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E1C105CC-7DED-4336-A70D-FA7524C27F35}</ProjectGuid>
     <RootNamespace>femmd2Dvcpp</RootNamespace>
@@ -150,9 +188,6 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
       <TargetMachinePlatform>64</TargetMachinePlatform>
     </CudaCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <CudaCompile Include="kernel.cu" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 7.5.targets" />
